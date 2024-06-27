@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
+#define pcount(x) __builtin_popcount(x)
   #define ll long long 
 void solve(){
   int n, m;cin>>n>>m;
