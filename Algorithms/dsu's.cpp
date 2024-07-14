@@ -7,7 +7,7 @@ class DSU{
   int n;
   int* parent; int *rank;
   DSU(int sz){
-     n= sz;
+    n= sz;
     parent = new int[200005];
     rank = new int[200005];
     for(int i=1;i<=n;i++)parent[i]=i,rank[i] = 0;
