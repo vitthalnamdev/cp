@@ -16,11 +16,13 @@ class B{
     cout<<"HELLO"<<endl;
  }
 };
-void solve(){
-    cout<<"SOLVE"<<endl;
+
+void solve( A<int,double>a /*this invokes the copy constructor but not the default constructor.*/){
+     
 }
 int main(){
  A<int , double>a;
- solve();
- cout<<"VITTHAL"<<endl;
+ // invokes the copy constructor.
+ solve(a);
+  
 }
