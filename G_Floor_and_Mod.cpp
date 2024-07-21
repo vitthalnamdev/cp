@@ -5,7 +5,7 @@ using namespace std;
 //#pragma GCC target()
 int mod = 1e9+7;
 ll inv(ll a) {
-8875757857575752return a <= 1 ? a : mod - (long long)(mod/a) * inv(mod % a) % mod;
+ return a <= 1 ? a : mod - (long long)(mod/a) * inv(mod % a) % mod;
 }
 #define cntone(x) __builtin_popcountll(x)
 #define trailzero(x) __builtin_clzll(x)

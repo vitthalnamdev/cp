@@ -11,24 +11,49 @@ return a <= 1 ? a : mod - (long long)(mod/a) * inv(mod % a) % mod;
 #define trailzero(x) __builtin_clzll(x)
 #define trailone(x) __builtin_ctzll(x)
 void solve(){
-vector<pair<double,double>>arr(3);
-for(int i=0;i<3;i++){
-    cin>>arr[i].first>>arr[i].second;
-}
-double check[3];
-check[0] = (pow(arr[1].second-arr[0].second,2) +pow(arr[1].first-arr[0].first,2)); 
-check[1] = (pow(arr[1].second-arr[2].second,2) +pow(arr[1].first-arr[2].first,2));
-check[2] = (pow(arr[2].second-arr[0].second,2) +pow(arr[2].first-arr[0].first,2));
-sort(check,check+3);
-if(check[0] + check[1] ==check[2]){
-    cout<<"Yes"<<endl;
-}else{
-    cout<<"No"<<endl;
-}
-}
+   int n;
+        cin>> n;
+
+        vector<ll> nums(n);
+        for(int i=0;i<n;i++)
+        cin>> nums[i];
+
+        
+
+        sort(nums.begin(),nums.end());
+        unordered_map<ll, ll> prefix, suffix;
+        for (int i = 0; i < n; i++)
+        {
+            if (prefix.find(nums[i] - 1) != prefix.end())
+            {
+                prefix[nums[i]] = prefix[nums[i] - 1] + 1;
+            }
+            else
+            {
+                prefix[nums[i]] = 1;
+            }
+        }
+        for (int i = n - 1; i >= 0; i--)
+        {
+            if (suffix.find(nums[i] + 1) != suffix.end())
+            {
+                suffix[nums[i]] = suffix[nums[i] + 1] + 1;
+            }
+            else
+            {
+                suffix[nums[i]] = 1;
+            }
+        }
+        ll ans = 0;
+        for (int i = 0; i < n; i++)
+        {
+            ans += prefix[nums[i]] * suffix[nums[i] + 2];
+        }
+        cout<<ans<<endl;
+    }
 int main(){
 std::ios::sync_with_stdio(false);std::cin.tie(nullptr);std::cout.tie(nullptr);
-int t=1;
+int t;cin>>t;
 while(t--){
 solve();
 }
