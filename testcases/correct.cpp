@@ -43,12 +43,17 @@ void solve()
         for(int j=0;j<=k;j++){
             for(int p = i-1;p>=0;p--){
                int now = j - (i - p - 1);
-               if(now>=0  ){
+               if(now>=0  && dp[p][now]!=INT_MAX){
                  dp[i][j] = min(dp[i][j] , dp[p][now] + (cordinate[i] - cordinate[p])*speed[p]);
                }
                
             }
         }
+    }
+    for(int i=0;i<=k;i++){
+        for(int j=0;j<=n;j++){
+            cout<<dp[j][i]<<" ";
+        }cout<<endl;
     }
     ll ele = *min_element(dp[n].begin(),dp[n].end());
     cout<<ele<<endl;

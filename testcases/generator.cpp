@@ -6,9 +6,9 @@ int main()
 
 	srand(time(NULL));
 	
-	// correct
-	int n = rand()%10 + 3;
-	int l = rand()%100+1;
+	 
+	 int n = 7;
+	int l =  20;
     l = n+l;
 	int k = rand()%n;
 	cout<<n<<" "<<l<<" "<<k<<endl;
@@ -19,9 +19,7 @@ int main()
         numbers[i] = first + rand() % (last - first);
     }
 
-    std::sort(numbers.begin() + 1, numbers.end() - 1);
-
-    // Adjust numbers to be strictly increasing
+    sort(numbers.begin() + 1, numbers.end() - 1);
     for (int i = 1; i < n - 1; ++i) {
         if (numbers[i] <= numbers[i - 1]) {
             numbers[i] = numbers[i - 1] + 1;

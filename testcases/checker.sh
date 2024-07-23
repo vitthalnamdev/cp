@@ -8,7 +8,6 @@ for((i = 1; ; ++i)); do
     ./correct <randomInput > AC
     diff -w WA AC || break
     echo "Passed test: "  $i
-    echo randomInput
 done
 
 echo -e "\nWA on the following test:"

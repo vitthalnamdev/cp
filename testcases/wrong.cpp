@@ -55,9 +55,18 @@ void solve()
             if(j<i){dp[j][i] = dp[j][i-1];}
             dp[j + 1][i] = mini({dp[j][i].first + (cordinate[j + 1] - cordinate[j]) * speed[j], speed[j]},
                                 {dp[j][i - 1].first + (cordinate[j + 1] - cordinate[j]) * dp[j][i - 1].second, dp[j][i - 1].second});
+            if(i==3 && j==4){
+                 cout<<dp[j+1][i].first<<endl;
+                cout<<dp[j][i - 2].first + (cordinate[n] - cordinate[j]) * dp[j][i - 2].second<<endl;
+            }
         }
     }
-
+    
+    for(int i=0;i<=k;i++){
+        for(int j=0;j<=n;j++){
+            cout<<dp[j][i].first<<" ";
+        }cout<<endl;
+    }
     cout << dp[n][k].first << endl;
 }
 int main()
