@@ -1,0 +1,1 @@
+{"name":"Local: checkgfg","url":"c:\\Users\\Vitthal Namdev\\Documents\\cp\\checkgfg.cpp","tests":[{"id":1721737435173,"input":"1\n4 4 10 5 10 7 2 N 3 8","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Vitthal Namdev\\Documents\\cp\\checkgfg.cpp","group":"local","local":true}
